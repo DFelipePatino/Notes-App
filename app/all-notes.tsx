@@ -1,7 +1,8 @@
-import { FlatList, StyleSheet, Text, View, ActivityIndicator } from 'react-native';
+import { FlatList, Text, View, ActivityIndicator } from 'react-native';
 import { useNotes } from '@/context/NotesContext';
 import ListItem from '@/components/ListItem';
 import { Ionicons } from '@expo/vector-icons';
+import { styles } from '@/styles/AllNotes.styles';
 
 export default function AllNotesScreen() {
   const { notes, isLoading } = useNotes();
@@ -42,36 +43,3 @@ export default function AllNotesScreen() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#f5f5f5',
-  },
-  loadingContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  listContent: {
-    padding: 16,
-    paddingBottom: 32,
-  },
-  emptyContainer: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 32,
-  },
-  emptyText: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: '#666',
-    marginTop: 16,
-  },
-  emptySubtext: {
-    fontSize: 16,
-    color: '#999',
-    marginTop: 8,
-    textAlign: 'center',
-  },
-});
